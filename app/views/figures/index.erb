@@ -1,0 +1,34 @@
+<h1>NYC's Historical Figures</h1>
+
+<% @figures.each do |figure| %>
+<h3><%=figure.name%></h3>
+
+<% if !figure.titles.empty? %>
+
+  <ul>
+    <li><h4>Titles:</h4>
+    <ul>
+      <% figure.titles.each do |title| %>
+        <li><%=title.name%></li>
+      <% end %>
+    </ul>
+    </li>
+  </ul>
+
+<% end %>
+
+<% if !figure.landmarks.empty? %>
+
+<ul>
+  <li><h4>Landmarks:</h4>
+  <ul>
+    <% figure.landmarks.each do |landmark| %>
+      <li><%=landmark.name%>, completed <%=landmark.year_completed%></li>
+    <% end %>
+  </ul>
+  </li>
+</ul>
+
+<% end %>
+
+<% end %>
